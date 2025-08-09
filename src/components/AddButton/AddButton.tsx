@@ -1,7 +1,13 @@
 import "../../styles/AddButton.css"
 
-const AddButton = () => {
-    return <button className="add-button"> + Add Task </button>
+export const AddButton = (props: IAddButton) => {
+  return (
+    <button className="add-button" onClick={props.onAddTask}>      
+      + Add Task
+    </button>
+  )
 }
 
-export default AddButton;
+export interface IAddButton {
+  onAddTask: () => void
+}

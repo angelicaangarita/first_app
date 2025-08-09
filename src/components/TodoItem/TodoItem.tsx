@@ -1,11 +1,22 @@
-import '../../styles/TodoItem.css';
+import "../../styles/TodoItem.css"
+//import editIcon from "./../../assets/edit.png"
+import type { Todo } from "../Main/Main"
 
-const TodoItem =() =>{
-    return(
-        <div className="todo-item">
-            <span>Tarea</span>
-        </div>
-    )
+export const TodoItem = (props: ITodoItem) => {
+  return (
+    <div className="todo-item">
+      <span>{props.todo.text}</span>
+      {/* <button className="add-task">
+        <img
+          src={editIcon}
+          alt="Editar"
+          style={{ width: "16px", height: "16px" }}
+        />
+      </button> */}
+    </div>
+  )
 }
-
-export default TodoItem
+export interface ITodoItem{  
+    todo: Todo
+    setTodos: (todos: Todo[]) => void;  
+}
